@@ -28,31 +28,29 @@ const DisplayItems = ({ products, removeProduct, increaseProduct }) => {
 			return group;
 		}, {})
 	);
-	console.log(groupById);
 
 	return (
 		<div>
 			{groupById.map((product, index) => {
-				console.log("product", product);
 				return (
 					<div key={index} className={`${product[0].id}`}>
 						<h1>
 							{product[0].name} {product.length}
 						</h1>
-						<a
+						<span
 							onClick={() => {
 								removeProduct(product[0].id);
 							}}
 						>
 							del
-						</a>
-						<a
+						</span>
+						<span
 							onClick={() => {
 								increaseProduct(product[0].id);
 							}}
 						>
 							add
-						</a>
+						</span>
 					</div>
 				);
 			})}

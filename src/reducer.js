@@ -17,14 +17,14 @@ const reducer = (state, action) => {
 	if (action.type === "REMOVE_PRODUCT") {
 		let flag = false;
 		let newCart = state.cart.filter((product) => {
-			if (flag == true) {
+			if (flag === true) {
 				return product;
 			}
-			if (product.id !== action.payload && flag == false) {
+			if (product.id !== action.payload && flag === false) {
 				return product;
 			} else {
 				flag = true;
-				return;
+				return null;
 			}
 		});
 		return {

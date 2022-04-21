@@ -1,6 +1,8 @@
 import Navbar from "./components/Navbar.js";
 import ProductList from "./components/ProductList.js";
 import data from "./data";
+import { Route, Routes } from "react-router-dom";
+import ProductDetail from "./ProductDetail.js";
 
 function App() {
 	return (
@@ -9,7 +11,10 @@ function App() {
 				<Navbar pageTitle={"Sklep"} />
 			</header>
 			<main>
-				<ProductList products={data} />
+				<Routes>
+					<Route path="/" element={<ProductList products={data} />}></Route>
+					<Route path="/:productId" element={<ProductDetail />}></Route>
+				</Routes>
 			</main>
 		</div>
 	);

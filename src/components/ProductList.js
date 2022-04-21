@@ -1,5 +1,6 @@
 import React from "react";
 import { useGlobalContext } from "../context";
+import { Link } from "react-router-dom";
 
 const ProductList = ({ products }) => {
 	return (
@@ -23,7 +24,7 @@ const ProductCard = ({ product }) => {
 			</div>
 			<div className="basis-9/12 sm:pl-6 pl-0">
 				<h2 className=" font-bold text-xl pb-4 max-w-lg" itemProp="name">
-					{name}
+					<Link to={`/${id}`}>{name}</Link>
 				</h2>
 				<div className="flex items-end">
 					<p className=" pr-10">{shortDesc}</p>
