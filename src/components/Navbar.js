@@ -7,7 +7,7 @@ const Navbar = ({ pageTitle }) => {
 	console.log(context);
 	return (
 		<nav className=" pb-4">
-			<h1 className=" text-2xl flex items-center justify-between font-bold">
+			<h1 className=" text-2xl flex items-center justify-between font-bold relative">
 				{pageTitle}
 				<button
 					className=" text-2xl px-4 py-4 bg-primary text-white rounded-xl leading-none cursor-pointer"
@@ -15,10 +15,10 @@ const Navbar = ({ pageTitle }) => {
 						context.toggleCartModal();
 					}}
 				>
-					KOSZYK {context.cart}
+					KOSZYK
+					{context.isCartModalOpened ? <CartModal /> : ""}
 				</button>
 			</h1>
-			{context.isCartModalOpened ? <CartModal /> : ""}
 		</nav>
 	);
 };
