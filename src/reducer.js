@@ -32,6 +32,12 @@ const reducer = (state, action) => {
 			cart: [...newCart],
 		};
 	}
+	if (action.type === "INCREASE_PRODUCT") {
+		return {
+			...state,
+			cart: [...state.cart, ...products.filter((single) => single.id === action.payload)],
+		};
+	}
 	throw new Error("no matching action type");
 };
 
