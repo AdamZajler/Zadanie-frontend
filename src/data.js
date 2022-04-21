@@ -1,4 +1,4 @@
-export default [
+const data = [
 	{
 		id: 1,
 		name: "e-PAKIET WYSYŁKOWY Genetyczna diagnostyka dermatomykoz - grzybica paznokci",
@@ -20,3 +20,5 @@ export default [
 		image: "/kariotyp.png",
 	},
 ];
+
+export default data;

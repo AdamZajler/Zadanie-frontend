@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar.js";
 import ProductList from "./components/ProductList.js";
+import data from "./data";
 
 function App() {
 	return (
@@ -8,7 +9,7 @@ function App() {
 				<Navbar pageTitle={"Sklep"} />
 			</header>
 			<main>
-				<ProductList />
+				<ProductList products={data} />
 			</main>
 		</div>
 	);

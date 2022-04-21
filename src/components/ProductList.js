@@ -1,11 +1,11 @@
 import React from "react";
-import data from "../data";
+import { useGlobalContext } from "../context";
 
-const ProductList = () => {
+const ProductList = ({ products }) => {
 	return (
 		<section>
 			<h1 className="text-lg bg-primary text-white py-1 px-2 rounded-t-md">Lista pakietów</h1>
-			{data.map((product) => {
+			{products.map((product) => {
 				return <ProductCard key={product.id} product={product} />;
 			})}
 		</section>
@@ -13,7 +13,9 @@ const ProductList = () => {
 };
 
 const ProductCard = ({ product }) => {
-	const { name, price, currency, image, shortDesc } = product;
+	const context = useGlobalContext();
+
+	const { id, name, price, currency, image, shortDesc } = product;
 	return (
 		<article className="px-6 py-6 flex items-stretch border-b" itemScope itemType="http://schema.org/Product">
 			<div className="basis-3/12">
@@ -30,7 +32,13 @@ const ProductCard = ({ product }) => {
 							<data value={price}>{price}</data>
 							&nbsp;{currency}
 						</span>
-						<button className="mt-2 px-4 py-1 bg-primary text-white flex whitespace-nowrap rounded-lg cursor-pointer">
+						<button
+							className="mt-2 px-4 py-1 bg-primary text-white flex whitespace-nowrap rounded-lg cursor-pointer"
+							onClick={() => {
+								console.log("klik");
+								context.addToCart(id);
+							}}
+						>
 							DO KOSZYKA
 						</button>
 					</span>
