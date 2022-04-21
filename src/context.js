@@ -3,7 +3,7 @@ import reducer from "./reducer";
 
 const AppContext = React.createContext();
 const initialState = {
-	isCartModalOpened: false,
+	isCartModalOpened: true,
 	cart: [],
 	total: 0,
 	amount: 0,

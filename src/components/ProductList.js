@@ -16,7 +16,7 @@ const ProductList = ({ products }) => {
 const ProductCard = ({ product }) => {
 	const context = useGlobalContext();
 
-	const { id, name, price, currency, image, shortDesc } = product;
+	const { id, name, price, currency, image, shortDesc, slug } = product;
 	return (
 		<article className="px-6 py-6 flex items-stretch border-b" itemScope itemType="http://schema.org/Product">
 			<div className="basis-3/12">
@@ -24,7 +24,7 @@ const ProductCard = ({ product }) => {
 			</div>
 			<div className="basis-9/12 sm:pl-6 pl-0">
 				<h2 className=" font-bold text-xl pb-4 max-w-lg" itemProp="name">
-					<Link to={`/${id}`}>{name}</Link>
+					<Link to={`/${slug}`}>{name}</Link>
 				</h2>
 				<div className="flex items-end">
 					<p className=" pr-10">{shortDesc}</p>
