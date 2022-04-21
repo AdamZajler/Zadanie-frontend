@@ -19,8 +19,18 @@ const AppProvider = ({ children }) => {
 	const toggleCartModal = () => {
 		dispatch({ type: "TOGGLE_CART_MODAL" });
 	};
+
+	const removeProduct = (id) => {
+		dispatch({ type: "REMOVE_PRODUCT", payload: id });
+	};
+
+	const increaseProduct = (id) => {
+		dispatch({ type: "INCREASE_PRODUCT", payload: id });
+	};
 	return (
-		<AppContext.Provider value={{ ...state, addToCart, toggleCartModal }}>{children}</AppContext.Provider>
+		<AppContext.Provider value={{ ...state, addToCart, toggleCartModal, removeProduct, increaseProduct }}>
+			{children}
+		</AppContext.Provider>
 	);
 };
 

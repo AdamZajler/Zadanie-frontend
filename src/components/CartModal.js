@@ -6,12 +6,16 @@ const CartModal = () => {
 	console.log(context.cart);
 	return (
 		<div className=" absolute top-full right-0 w-full h-full bg-gray text-black">
-			{context.cart.length > 0 ? <DisplayItems products={context.cart} /> : <h1>empty cart</h1>}
+			{context.cart.length > 0 ? (
+				<DisplayItems products={context.cart} removeProduct={context.removeProduct} />
+			) : (
+				<h1>empty cart</h1>
+			)}
 		</div>
 	);
 };
 
-const DisplayItems = ({ products }) => {
+const DisplayItems = ({ products, removeProduct }) => {
 	const groupById = Object.values(
 		products.reduce((group, product) => {
 			const { id } = product;
@@ -25,10 +29,21 @@ const DisplayItems = ({ products }) => {
 	return (
 		<div>
 			{groupById.map((product, index) => {
+				console.log("product", product);
 				return (
-					<h1 key={index}>
-						{product[0].name} {product.length}
-					</h1>
+					<div key={index} className={`${product[0].id}`}>
+						<h1>
+							{product[0].name} {product.length}
+						</h1>
+						<a
+							onClick={() => {
+								console.log("usuwam");
+								removeProduct(product[0].id);
+							}}
+						>
+							del
+						</a>
+					</div>
 				);
 			})}
 		</div>

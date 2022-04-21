@@ -14,6 +14,24 @@ const reducer = (state, action) => {
 			isCartModalOpened: !state.isCartModalOpened,
 		};
 	}
+	if (action.type === "REMOVE_PRODUCT") {
+		let flag = false;
+		let newCart = state.cart.filter((product) => {
+			if (flag == true) {
+				return product;
+			}
+			if (product.id !== action.payload && flag == false) {
+				return product;
+			} else {
+				flag = true;
+				return;
+			}
+		});
+		return {
+			...state,
+			cart: [...newCart],
+		};
+	}
 	throw new Error("no matching action type");
 };
 

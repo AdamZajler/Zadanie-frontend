@@ -4,7 +4,6 @@ import CartModal from "./CartModal";
 
 const Navbar = ({ pageTitle }) => {
 	const context = useGlobalContext();
-	console.log(context);
 	return (
 		<nav className=" pb-4">
 			<h1 className=" text-2xl flex items-center justify-between font-bold relative">
