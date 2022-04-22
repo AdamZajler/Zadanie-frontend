@@ -5,6 +5,8 @@ const reducer = (state, action) => {
 	if (action.type === "ADD_TO_CART") {
 		let newProduct = products.filter((single) => single.id === action.payload);
 		let newProductPrice = parseFloat(newProduct[0].price);
+
+		localStorage.setItem("Cart", JSON.stringify([...state.cart, ...newProduct]));
 		return {
 			...state,
 			cart: [...state.cart, ...newProduct],
@@ -32,6 +34,8 @@ const reducer = (state, action) => {
 				return null;
 			}
 		});
+
+		localStorage.setItem("Cart", JSON.stringify([...newCart]));
 		return {
 			...state,
 			cart: [...newCart],
@@ -39,6 +43,10 @@ const reducer = (state, action) => {
 		};
 	}
 	if (action.type === "INCREASE_PRODUCT") {
+		localStorage.setItem(
+			"Cart",
+			JSON.stringify([...state.cart, ...products.filter((single) => single.id === action.payload)])
+		);
 		return {
 			...state,
 			cart: [...state.cart, ...products.filter((single) => single.id === action.payload)],

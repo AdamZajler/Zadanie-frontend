@@ -2,15 +2,22 @@ import React, { useContext, useReducer } from "react";
 import reducer from "./reducer";
 
 const AppContext = React.createContext();
+let cart = JSON.parse(localStorage.getItem("Cart"));
+let cartSummary = 0;
+if (!cart) {
+	cart = [];
+} else {
+	cart.map((product) => (cartSummary += parseFloat(product.price)));
+}
 const initialState = {
 	isCartModalOpened: false,
-	cart: [],
-	cartSummary: 0,
+	cart: cart,
+	cartSummary: cartSummary,
 	total: 0,
 	amount: 0,
 	currentPage: "Sklep",
 };
-
+console.log("wolololo", cartSummary);
 const AppProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(reducer, initialState);
 
