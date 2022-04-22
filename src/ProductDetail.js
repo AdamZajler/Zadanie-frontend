@@ -8,7 +8,7 @@ const ProductDetail = () => {
 	const params = useParams();
 	const product = data.filter((product) => product.slug === params.productSlug)[0];
 
-	const { id, name, price, currency, image, shortDesc, slug } = product;
+	const { id, name, price, currency, image, shortDesc } = product;
 	return (
 		<>
 			<article
@@ -36,7 +36,6 @@ const ProductDetail = () => {
 						<button
 							className="mt-2 px-4 py-1 bg-primary text-white flex whitespace-nowrap rounded-lg cursor-pointer hover:bg-primary_hover transition-colors"
 							onClick={() => {
-								console.log("klik");
 								context.addToCart(id);
 							}}
 						>
@@ -46,9 +45,9 @@ const ProductDetail = () => {
 				</div>
 			</article>
 			<Link to={"/"}>
-				<a className="bg-primary text-white p-4 rounded-md flex justify-center items-center mt-12 sm:max-w-xs">
+				<span className="bg-primary text-white p-4 rounded-md flex justify-center items-center mt-12 sm:max-w-xs">
 					Na stronę listy produktów
-				</a>
+				</span>
 			</Link>
 		</>
 	);

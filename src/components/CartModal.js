@@ -26,7 +26,7 @@ const DisplayItems = ({ products }) => {
 		let summary = 0;
 		group.map((singleProduct) => {
 			let productPrice = parseFloat(singleProduct.price);
-			summary += productPrice;
+			return (summary += productPrice);
 		});
 		return summary;
 	}
@@ -63,7 +63,7 @@ const SingleCartElement = ({ product, priceSummary }) => {
 						context.removeProduct(product[0].id);
 					}}
 				>
-					<img src="/minus.svg" />
+					<img src="/minus.svg" alt="" />
 				</div>
 				<p className="mx-2 flex justify-center items-center h-6">{product.length}</p>
 				<div
@@ -72,7 +72,7 @@ const SingleCartElement = ({ product, priceSummary }) => {
 						context.increaseProduct(product[0].id);
 					}}
 				>
-					<img src="/plus.svg" />
+					<img src="/plus.svg" alt="" />
 				</div>
 				<div className="ml-2">
 					{priceSummary}

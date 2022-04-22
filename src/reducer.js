@@ -7,6 +7,7 @@ const reducer = (state, action) => {
 		let newProductPrice = parseFloat(newProduct[0].price);
 
 		localStorage.setItem("Cart", JSON.stringify([...state.cart, ...newProduct]));
+
 		return {
 			...state,
 			cart: [...state.cart, ...newProduct],

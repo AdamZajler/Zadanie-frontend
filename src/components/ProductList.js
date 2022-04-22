@@ -50,7 +50,6 @@ const ProductCard = ({ product }) => {
 						<button
 							className="mt-2 px-4 py-1 bg-primary text-white flex whitespace-nowrap rounded-lg cursor-pointer hover:bg-primary_hover transition-colors"
 							onClick={() => {
-								console.log("klik");
 								context.addToCart(id);
 							}}
 						>

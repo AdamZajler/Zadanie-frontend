@@ -9,6 +9,7 @@ if (!cart) {
 } else {
 	cart.map((product) => (cartSummary += parseFloat(product.price)));
 }
+
 const initialState = {
 	isCartModalOpened: false,
 	cart: cart,
@@ -17,7 +18,7 @@ const initialState = {
 	amount: 0,
 	currentPage: "Sklep",
 };
-console.log("wolololo", cartSummary);
+
 const AppProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(reducer, initialState);
 
