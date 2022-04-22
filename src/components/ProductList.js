@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const ProductList = ({ products }) => {
 	return (
-		<section>
+		<section className="bg-white rounded-b-md">
 			<h1 className="text-lg bg-primary text-white py-1 px-2 rounded-t-md">Lista pakietów</h1>
 			{products.map((product) => {
 				return <ProductCard key={product.id} product={product} />;
@@ -32,7 +32,7 @@ const ProductCard = ({ product }) => {
 				</h2>
 				<div className="flex items-end">
 					<p className=" flex flex-col sm:flex-row">
-						<p className="sm:pr-6">{shortDesc}</p>
+						<span className="sm:pr-6">{shortDesc}</span>
 						<span className=" font-bold text-primary text-lg mt-6 text-right sm:self-end">
 							<data value={price}>{price}</data>
 							&nbsp;{currency}
