@@ -18,23 +18,32 @@ const ProductCard = ({ product }) => {
 
 	const { id, name, price, currency, image, shortDesc, slug } = product;
 	return (
-		<article className="px-6 py-6 flex items-stretch border-b" itemScope itemType="http://schema.org/Product">
-			<div className="basis-3/12">
-				<img className=" w-48 h-60 object-cover rounded-lg" src={image} alt="" />
+		<article
+			className="px-6 py-6 flex flex-col items-stretch border-b sm:flex-row last:border-none"
+			itemScope
+			itemType="http://schema.org/Product"
+		>
+			<div className="basis-full mb-4 sm:basis-3/12 ">
+				<img className="object-cover rounded-lg w-full h-56 sm:w-48 sm:h-60" src={image} alt="" />
 			</div>
-			<div className="basis-9/12 sm:pl-6 pl-0">
+			<div className="basis-9/12 pl-0 sm:pl-4 lg:pl-0">
 				<h2 className=" font-bold text-xl pb-4 max-w-lg" itemProp="name">
 					<Link to={`/${slug}`}>{name}</Link>
 				</h2>
 				<div className="flex items-end">
-					<p className=" pr-10">{shortDesc}</p>
-					<span className=" flex flex-col items-end">
-						<span className=" font-bold text-primary text-lg">
+					<p className=" flex flex-col sm:flex-row">
+						<p className="sm:pr-6">{shortDesc}</p>
+						<span className=" font-bold text-primary text-lg mt-6 text-right sm:self-end">
 							<data value={price}>{price}</data>
 							&nbsp;{currency}
 						</span>
+					</p>
+				</div>
+				<p className="text-primary underline font-bold cursor-pointer flex items-center justify-between">
+					<span className=" self-end">Zobacz więcej</span>
+					<span className=" flex flex-col items-end">
 						<button
-							className="mt-2 px-4 py-1 bg-primary text-white flex whitespace-nowrap rounded-lg cursor-pointer"
+							className="mt-2 px-4 py-1 bg-primary text-white flex whitespace-nowrap rounded-lg cursor-pointer hover:bg-primary_hover transition-colors"
 							onClick={() => {
 								console.log("klik");
 								context.addToCart(id);
@@ -43,8 +52,7 @@ const ProductCard = ({ product }) => {
 							DO KOSZYKA
 						</button>
 					</span>
-				</div>
-				<p className="mt-2 text-primary underline font-bold cursor-pointer">Zobacz więcej</p>
+				</p>
 			</div>
 		</article>
 	);

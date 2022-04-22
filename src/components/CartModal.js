@@ -5,7 +5,7 @@ const CartModal = () => {
 	const context = useGlobalContext();
 	console.log(context.cart);
 	return (
-		<div className=" absolute top-full right-0 w-full bg-gray text-black">
+		<div className=" absolute top-full right-0 mt-2 px-6 py-4 rounded-lg bg-gray text-black">
 			{context.cart.length > 0 ? (
 				<DisplayItems
 					products={context.cart}

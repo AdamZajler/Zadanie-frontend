@@ -19,6 +19,16 @@ const data = [
 		slug: "e-pakiet-kariotyp-molekularny-mikromacierz-kliniczna-cgh",
 		image: "/kariotyp.png",
 	},
+	{
+		id: 3,
+		name: "E-PAKIET ZDROWY START NA WIOSNĘ – PAKIET ROZSZERZONY",
+		shortDesc:
+			"Wiosna to idealny moment na zadbanie o zdrowie i dobrą kondycję. Przywitaj wiosnę w pełni sił - zadbaj o zdrowie dzięki badaniom w pakiecie rozszerzonym. Pakiet zawiera następujące",
+		price: "139.00",
+		currency: "PLN",
+		slug: "e-pakiet-zdrowy-start-na-wiosne-pakiet-rozszerzony",
+		image: "/m1.png",
+	},
 ];
 
 export default data;
