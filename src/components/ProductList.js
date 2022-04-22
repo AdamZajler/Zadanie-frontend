@@ -28,7 +28,9 @@ const ProductCard = ({ product }) => {
 			</div>
 			<div className="basis-9/12 pl-0 sm:pl-4 lg:pl-0">
 				<h2 className=" font-bold text-xl pb-4 max-w-lg" itemProp="name">
-					<Link to={`/${slug}`}>{name}</Link>
+					<Link to={`/${slug}`} onClick={() => context.changeCurrentPage("Strona produktu")}>
+						{name}
+					</Link>
 				</h2>
 				<div className="flex items-end">
 					<p className=" flex flex-col sm:flex-row">
@@ -40,7 +42,10 @@ const ProductCard = ({ product }) => {
 					</p>
 				</div>
 				<p className="text-primary underline font-bold cursor-pointer flex items-center justify-between">
-					<span className=" self-end">Zobacz więcej</span>
+					<Link to={`/${slug}`} onClick={() => context.changeCurrentPage("Strona produktu")}>
+						<span className=" self-end">Zobacz więcej</span>
+					</Link>
+
 					<span className=" flex flex-col items-end">
 						<button
 							className="mt-2 px-4 py-1 bg-primary text-white flex whitespace-nowrap rounded-lg cursor-pointer hover:bg-primary_hover transition-colors"

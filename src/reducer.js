@@ -46,6 +46,12 @@ const reducer = (state, action) => {
 				state.cartSummary + parseFloat(products.filter((single) => single.id === action.payload)[0].price),
 		};
 	}
+	if (action.type === "CHANGE_CURRENT_PAGE") {
+		return {
+			...state,
+			currentPage: action.payload,
+		};
+	}
 	throw new Error("no matching action type");
 };
 

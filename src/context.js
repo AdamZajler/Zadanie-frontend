@@ -3,11 +3,12 @@ import reducer from "./reducer";
 
 const AppContext = React.createContext();
 const initialState = {
-	isCartModalOpened: true,
+	isCartModalOpened: false,
 	cart: [],
 	cartSummary: 0,
 	total: 0,
 	amount: 0,
+	currentPage: "Sklep",
 };
 
 const AppProvider = ({ children }) => {
@@ -28,8 +29,14 @@ const AppProvider = ({ children }) => {
 	const increaseProduct = (id) => {
 		dispatch({ type: "INCREASE_PRODUCT", payload: id });
 	};
+
+	const changeCurrentPage = (pageName) => {
+		dispatch({ type: "CHANGE_CURRENT_PAGE", payload: pageName });
+	};
 	return (
-		<AppContext.Provider value={{ ...state, addToCart, toggleCartModal, removeProduct, increaseProduct }}>
+		<AppContext.Provider
+			value={{ ...state, addToCart, toggleCartModal, removeProduct, increaseProduct, changeCurrentPage }}
+		>
 			{children}
 		</AppContext.Provider>
 	);

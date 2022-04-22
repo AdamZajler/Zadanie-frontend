@@ -3,7 +3,6 @@ import { useGlobalContext } from "../context";
 
 const CartModal = () => {
 	const context = useGlobalContext();
-	console.log(context);
 	return (
 		<div className=" absolute top-full right-0 mt-2 px-6 py-4 rounded-lg bg-white text-black border">
 			{context.cart.length > 0 ? (
@@ -11,9 +10,8 @@ const CartModal = () => {
 					<DisplayItems products={context.cart} />{" "}
 					<div className="flex text-lg">
 						<p className="mr-2">Podsumowanie: </p>
-						{/* {context.cart.map((product) => (cartSummary += parseFloat(product.price)))}
-						{context.cart[0].currency} */}
 						{context.cartSummary}
+						{context.cart[0].currency}
 					</div>
 				</>
 			) : (
