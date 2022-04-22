@@ -14,9 +14,10 @@ It's simple. Just download repository, run `npm i` and after installation, type 
 
 ### Why project is like this ❓
 
-Unfortunetly because of my avilable time in this weekend (renovation & a lot of overtime in work) I could only provide project like this. 
+Unfortunetly because of my limited avilable time in this weekend (renovation & a lot of overtime in work) I could only provide project like this. 
 In my free time I'm learning Next.js, and my small private project ☺ (headless CMS based on WP/GraphQL/SSR).
-Thanks to this recrutation progress I learn that I forgot few things from React and I systematized my knwoladge about it. I was absorbed in Next.js that I practicly forgot about basic things in React hah.
+
+Thanks to this recrutation progress I found out that I forgot few things from React and I systematized my knwoladge about it. I was absorbed in Next.js and my current work (CMS like WP/PrestaShop/Shopify) that I practicly forgot about basic things in React hah.
 
 It is the same like with all things, 'you need to have commercial experience to better understand and get used to new technology' ~ said someone somewhere
 
