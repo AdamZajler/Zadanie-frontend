@@ -5,6 +5,7 @@ const AppContext = React.createContext();
 const initialState = {
 	isCartModalOpened: true,
 	cart: [],
+	cartSummary: 0,
 	total: 0,
 	amount: 0,
 };
